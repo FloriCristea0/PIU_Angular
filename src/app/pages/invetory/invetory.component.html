@@ -1,0 +1,15 @@
+<div class="body">
+    <h1>Inventory</h1>
+    <button mat-raised-button class="add__item" (click)="openDialog()">Add Item<mat-icon>library_add</mat-icon></button>
+    <div class="items">
+      <div *ngFor="let item of items" class="item">
+        <p class="name">Nume: {{ item }}</p>
+        <p class="quantity">Cantitate: {{ item }}</p>
+        <p claas="description">Descriere: {{ item }}</p>
+        <div class="buttons">
+          <button mat-raised-button class="delete">Delete</button>
+          <button mat-raised-button class="edit">Edit</button>
+        </div>
+      </div>
+    </div>
+</div>

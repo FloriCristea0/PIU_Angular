@@ -1,0 +1,31 @@
+<div class="body">
+    <div class="form" [formGroup]="form">
+        <h1>Adaugare Item</h1>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Nume</mat-label>
+                <input matInput type="text" formControlName="nume" placeholder="Nume">
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Descriere</mat-label>
+                <input matInput type="text" formControlName="descriere" placeholder="Descriere">
+                <mat-icon matSuffix>description</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Cantitate</mat-label>
+                <input matInput type="text" formControlName="cantitate" placeholder="Cantitate">
+                <mat-icon matSuffix>equalizer</mat-icon>
+            </mat-form-field>
+        </p>
+        <button mat-raised-button>
+            <mat-icon matSuffix>add_circle</mat-icon>
+            Add Item
+        </button>
+
+    </div>
+</div>

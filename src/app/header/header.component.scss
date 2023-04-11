@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+body {
+    margin: 0;
+    background-color: #e2e1e4;
+}
+
+.navbar {
+    background: linear-gradient(to right, #100e1b 10%, #1d1b3a);
+    position: sticky;
+    top: 0;
+    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
+}
+
+.navbar_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.navbar_container img {
+    height: 35px;
+    width: 80px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#next {
+    font-size: 25px;
+    text-decoration: none;
+    background: linear-gradient(to right, #f35543, #f9bc09);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar_container a {
+    text-decoration: none;
+    color: white;
+    padding: 0px 20px 0px 0px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+}
+
+.navbar_container a:hover {
+    color: #f9bc09;
+}
+
+.navbar_container button {
+    background-color: #f37f13;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #08242a;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar_container button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to top, #f35543, #f9bc09);
+    color: #100e1b;
+
+}
