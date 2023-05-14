@@ -1,72 +1,92 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { FormComponent } from '../form/form.component';
 import { ItemService } from 'src/app/services/item.service';
 import { Item } from 'src/models/item';
 
 @Component({
-  selector: 'app-inventory',
-  templateUrl: './inventory.component.html',
-  styleUrls: ['./inventory.component.scss']
+  selector: 'app-invetory',
+  templateUrl: './invetory.component.html',
+  styleUrls: ['./invetory.component.scss'],
 })
 export class InventoryComponent implements OnInit {
   error?: string;
   itemList!: Item[];
-  items : string[] = [
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria",
-    "John",
-    "Maria"
-  ]
+  items: string[] = [
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+    'John',
+    'Maria',
+  ];
 
   constructor(public dialog: MatDialog, public itemService: ItemService) {}
 
   getItems(): void {
-    this.itemService.getItems().subscribe((list:Item[]) => {
-      this.itemList = list;
-    }, (err: { message: string | undefined; }) => {
+    this.itemService.getItems().subscribe(
+      (list: Item[]) => {
+        this.itemList = list;
+      },
+      (err) => {
         this.error = err.message;
-    })
+      }
+    );
   }
 
-  async openDialog() {
-    const dialogRef = this.dialog.open( Component , {
+  Delete(id?: number): void {
+    //AICI
+    if (!id) {
+      return;
+    }
+    this.itemService.deleteItem(id).subscribe(
+      () => {
+        window.location.reload(); //refresh
+      },
+      (err) => {
+        this.error = err.message;
+      }
+    );
+  }
+  async openDialog(id?: number) {
+    //AICI
+    if (typeof id !== 'number') {
+      id = 0;
+    }
+
+    const dialogRef = this.dialog.open(FormComponent, {
       width: '250px',
-      data: { items: this.items },
+      data: { itemid: id },
     });
 
-  dialogRef.afterClosed().subscribe(() => {
-    console.log('The dialog was closed.')
-  })
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('New Item added!');
+    });
   }
 
-  ngOnInit(): void {
-      
-  }
+  ngOnInit(): void {}
 }
