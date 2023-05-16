@@ -12,6 +12,10 @@ import { PagesComponent } from './pages/pages.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InventoryComponent } from './pages/invetory/invetory.component'; 
 import { FormComponent } from './pages/form/form.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { FormComponent } from './pages/form/form.component';
     FormsModule, 
     ReactiveFormsModule, 
     MatFormFieldModule, 
-    MatIconModule 
+    MatIconModule,
+    MatDialogModule,
+    HttpClientModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -59,7 +59,6 @@ export class InventoryComponent implements OnInit {
   }
 
   Delete(id?: number): void {
-    //AICI
     if (!id) {
       return;
     }
@@ -88,5 +87,5 @@ export class InventoryComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {this.getItems();}
 }

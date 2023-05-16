@@ -5,7 +5,6 @@ import { ItemService } from 'src/app/services/item.service';
 import { Item } from 'src/models/item';
 
 export interface DialogData{
-  idToBeEdited: number;
   itemid :number;
 }
 
@@ -67,9 +66,10 @@ private setEditForm(id : number) : void {
       ...this.itemToEdit,
       ...this.form.getRawValue()
     };
-    if(this.data.idToBeEdited == 0)
-      this.Save(newItem);
+    if(this.data.itemid != 0)
+    this.Edit(newItem);
     else
-      this.Edit(newItem);
+    this.Save(newItem);
+     
   }
 }
