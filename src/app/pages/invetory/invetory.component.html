@@ -4,11 +4,11 @@
     <div class="items">
       <div *ngFor="let item of itemList" class="item">
         <p>Nume: {{ item.name }}</p>
-        <p>Descriere: {{ item.number }}</p>
-        <p>Cantitate: {{ item.category }}</p>
+        <p>Cantitate: {{ item.number }}</p>
+        <p>Categorie: {{ item.category }}</p>
         <div class="buttons">
-          <button mat-raised-button class="delete" (click)="Delete(item.id)" >Delete</button>
-          <button mat-raised-button class="edit" (click)="openDialog(item.id)" >Edit</button>
+          <button mat-raised-button class="delete" (click)="Delete(item.id)">Delete</button>
+          <button mat-raised-button class="edit" (click)="openDialog(item.id)">Edit</button>
         </div>
       </div>
     </div>

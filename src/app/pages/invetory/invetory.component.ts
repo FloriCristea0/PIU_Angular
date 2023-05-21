@@ -71,8 +71,8 @@ export class InventoryComponent implements OnInit {
       }
     );
   }
+  
   async openDialog(id?: number) {
-    //AICI
     if (typeof id !== 'number') {
       id = 0;
     }
